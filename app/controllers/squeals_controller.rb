@@ -1,0 +1,2 @@
+class SquealsController < ApplicationController
+end
