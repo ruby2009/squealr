@@ -1,14 +1,14 @@
 class SquealsController < ApplicationController
 
-  # before_action :require_user
+  before_action :require_user
 
   def index
     if current_user
       @squeals = Squeal.timeline(current_user)
     else
     	@squeals = Squeal.order(created_at: :desc)
-      render json: @squeals
     end
+    render json: @squeals
   end
 
   def create
