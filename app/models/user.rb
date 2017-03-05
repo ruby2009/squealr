@@ -13,8 +13,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
 
-  def followees
-    
-  end
+  # def followees
+  #
+  # end
 
 end
