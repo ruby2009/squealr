@@ -3,6 +3,7 @@ class FollowsController < ApplicationController
   before_action :require_user
 
   def follow_unfallow_toggle
+    p params
     followee = User.find(params[:id])
     current_user.toggle_follow!(followee)
     result = current_user.follows?(followee) ?
