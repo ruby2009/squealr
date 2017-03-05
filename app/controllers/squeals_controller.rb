@@ -3,9 +3,12 @@ class SquealsController < ApplicationController
   before_action :require_user
 
   def index
-    @squeals = Squeal.timeline(current_user)
-    render json: @squeals, scope: current_user,
-    scope_name: :current_user
+    if current_user
+      @squeals = Squeal.timeline(current_user)
+    else
+    	@squeals = Squeal.order(created_at: :desc)
+      render json: @squeals
+    end
   end
 
   def create
