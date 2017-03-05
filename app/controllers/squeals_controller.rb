@@ -1,6 +1,6 @@
 class SquealsController < ApplicationController
 
-  before_action :require_user
+  # before_action :require_user
 
   def index
     if current_user
