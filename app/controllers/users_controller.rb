@@ -4,9 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    render json: @users,
-    scope: current_user, 
-    scope_name: :current_use
+    render json: @users
   end
 
   def create
