@@ -4,7 +4,8 @@ class SquealsController < ApplicationController
 
   def index
     @squeals = Squeal.timeline(current_user)
-    render json: @squeals
+    render json: @squeals, scope: current_user,
+    scope_name: :current_user
   end
 
   def create
