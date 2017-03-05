@@ -2,7 +2,7 @@ class SquealsController < ApplicationController
 
   before_action :require_user
 
-  def index(current_user)
+  def index
     @squeals = Squeal.timeline(current_user)
     render json: @squeals, scope: current_user,
     scope_name: :current_user
