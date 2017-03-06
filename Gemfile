@@ -34,7 +34,7 @@ gem "twilio-ruby"
 gem "socialization"
 gem 'shoulda'
 gem 'factory_girl_rails'
-gem 'carrierwave', '~> 1.0'
+# gem 'carrierwave', '~> 1.0'
 
 
 group :development, :test do
